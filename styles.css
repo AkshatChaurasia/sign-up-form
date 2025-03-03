@@ -1,0 +1,173 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom font */
+@font-face {
+    font-family: 'Norse';
+    src: url("font/Norse-Bold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Main layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Image section */
+.img-container {
+    position: relative;
+    width: 35%;
+    background-color: #f0f0f0;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stacked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.stacked img {
+    width: 100px;
+    height: auto;
+}
+
+.img-text {
+    font-family: 'Norse', sans-serif;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+/* Text/form section */
+.text-container {
+    width: 65%;
+    padding: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form styling */
+.line {
+    padding: 5px;
+    display: flex;
+    gap: 20px;
+}
+
+.input-pair {
+    flex: 1;
+    min-width: 0;
+}
+
+.input-pair label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-pair input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-pair input:invalid {
+    border-color: #ff4444; /* Red when invalid */
+}
+
+.input-pair input:valid {
+    border-color: #596d48; /* Green when valid */
+}
+
+/* Button and link section */
+.last {
+    padding-top: 50px;
+}
+
+.btn {
+    width: 250px;
+    background-color: #596d48;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #455738;
+}
+
+.link {
+    text-decoration: none;
+    color: #596d48;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .img-container, .text-container {
+        width: 100%;
+    }
+    .stacked {
+        padding: 5px 10px;
+    }
+    .stacked img {
+        width: 60px;
+    }
+    .img-text {
+        font-size: 50px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
